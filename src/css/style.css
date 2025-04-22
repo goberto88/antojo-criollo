@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-amarillo: #E8CC42;
+  --color-nav: #E8CC42;
+  --color-negro: #292A2D;
+  --color-rojo: #C96160;
+  --color-fondo: rgba(232, 204, 66, .4);
+  --color-fondo-azul: rgba(96, 118, 181, 1);
+  --color-titulo: rgb(96, 118, 181);
+  --font-textoMon: 'Montserrat', sans-serif;
+}
+
+:root {
+  scroll-padding-top: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: #FEFCE8;
+  background-image: linear-gradient(rgba(254, 252, 232, 0.8), rgba(254, 252, 232, 0.8)), url('/img/bgWeb.png');
+}
+
+/* Estilos para los íconos del menú hamburguesa */
+.icon-bars {
+  transition: opacity 0.3s ease;
+}
+
+/* Estilo para la tarjeta activa */
+.active-card {
+  border: 2px solid var(--color-azul);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cambiar el fondo del título de la tarjeta activa */
+.active-card .bg-amarillo {
+  background-color: var(--color-azul);
+  color: var(--color-amarillo);
+}
+
+/* Personalización de SweetAlert2 */
+.swal2-popup {
+  background-color: var(--color-amarillo) !important;
+  color: #333 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.swal2-title {
+  font-weight: bold !important;
+}
+
+.swal2-html-container {
+  text-align: left !important;
+}
+
+.swal2-confirm {
+  color: var(--color-amarillo) !important;
+}
+
+.swal2-confirm:hover {
+  background-color: #5b6e9a !important;
+}
+
+/* Ajustes para pantallas pequeñas (celulares, hasta 639px) */
+@media (max-width: 639px) {
+  body {
+    background-size: contain;
+  }
+}
+
+/* Ajustes para pantallas medianas (tablets, de 640px a 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  body {
+    background-size: 600px;
+  }
+}
+
+/* Ajustes para pantallas grandes (escritorios, 1024px o más) */
+@media (min-width: 1024px) {
+  body {
+    background-size: cover;
+  }
+}
