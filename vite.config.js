@@ -1,4 +1,3 @@
-// filepath: vite.config.js
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -17,5 +16,9 @@ export default defineConfig({
       }
     }
   },
-  publicDir: '../public' // Carpeta para recursos estáticos (imágenes, etc.)
+  publicDir: '../public', // Carpeta para recursos estáticos (imágenes, etc.)
+  // Optimización para Firebase
+  optimizeDeps: {
+    include: ['firebase/app', 'firebase/firestore']
+  }
 });

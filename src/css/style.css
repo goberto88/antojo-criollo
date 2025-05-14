@@ -3,13 +3,14 @@
 
 @theme {
   --color-amarillo: #E8CC42;
-  --color-nav: #E8CC42;
   --color-negro: #292A2D;
   --color-rojo: #C96160;
-  --color-fondo: rgba(232, 204, 66, .4);
-  --color-fondo-azul: rgba(96, 118, 181, 1);
-  --color-titulo: rgb(96, 118, 181);
+  --color-fondo: rgba(232, 204, 66, .6);
+  --color-titulo: 8CC42;
+  --color-negro: #292A2D;
   --font-textoMon: 'Montserrat', sans-serif;
+  --carousel-mobile: '18rem';
+  --carousel-mobile: 'auto'
 }
 
 :root {
@@ -23,7 +24,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif !important;
   background-color: #FEFCE8;
-  background-image: linear-gradient(rgba(254, 252, 232, 0.8), rgba(254, 252, 232, 0.8)), url('/img/bgWeb.png');
+  background-image: linear-gradient(rgba(254, 252, 232, 0.8), rgba(254, 252, 232, 0.9)), url('/img/bgWeb.png');
 }
 
 /* Estilos para los íconos del menú hamburguesa */
@@ -66,12 +67,25 @@ body {
   background-color: #5b6e9a !important;
 }
 
-/* Ajustes para pantallas pequeñas (celulares, hasta 639px) */
-@media (max-width: 639px) {
+/* Ajustes para el carrusel en pantallas pequeñas */
+
+
+@media (max-width: 767px) {
   body {
     background-size: contain;
   }
+    .carousel {
+        height: auto !important;
+    }
+    .carousel img {
+        object-fit: contain !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: 18rem !important;
+        margin-bottom: 1rem;
+    }
 }
+
 
 /* Ajustes para pantallas medianas (tablets, de 640px a 1023px) */
 @media (min-width: 640px) and (max-width: 1023px) {
@@ -85,4 +99,20 @@ body {
   body {
     background-size: cover;
   }
+}
+
+/* Asegurar que los spans de producto y precio estén alineados */
+ul[id$="-list"] li {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 1rem; /* Consistent spacing between product and price */
+}
+
+ul[id$="-list"] li span:first-child {
+  flex: 1; /* Product name takes available space */
+}
+
+ul[id$="-list"] li span:last-child {
+  flex-shrink: 0; /* Price does not shrink */
+  color: var(--color-titulo);
 }
